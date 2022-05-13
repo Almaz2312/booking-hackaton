@@ -10,6 +10,7 @@ class ConferenceListAPIView(generics.ListAPIView):
     queryset = Conference.objects.all()
     pagination_class = ConferencePagination
 
+    # have to write all parameters of filter, otherwise it will ignore
     def get_queryset(self):
         queryset = Conference.objects.all()
         conference_type = self.request.query_params.get('conference_type')
